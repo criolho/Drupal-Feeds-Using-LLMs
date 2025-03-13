@@ -3,7 +3,8 @@ How to generate JSON feeds enhanced with LLMs for import to Drupal.  This repo d
 
 ## Federal Register
 
-<img width="507" alt="image" src="https://github.com/user-attachments/assets/079d48ae-572e-443f-b3aa-b1e57532d292" />
+<img width="507" alt="image" src="https://github.com/user-attachments/assets/a53fde11-4b4a-40de-beaa-4ea1a0c05002" />
+
 
 - Site:  https://federalregister.gov
 - Background:  This is where the U.S. government publishes all proposed federal regulations or rules about to go into effect.  The site has an excellent UI and is also known for its developer-friendly API and JSON output.
