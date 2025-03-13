@@ -15,6 +15,16 @@ How to generate JSON feeds enhanced with LLMs for import to Drupal.  This repo d
 
 ### Inputs and Outputs
 
+Federal Register developer interactive API:
+https://www.federalregister.gov/developers/documentation/api/v1#/Federal%20Register%20Documents/get_documents__format_
+
+Federal Register JSON request for the EPA:
+https://www.federalregister.gov/api/v1/documents.json?fields[]=abstract&fields[]=type&fields[]=pdf_url&fields[]=document_number&fields[]=publication_date&fields[]=agencies&fields[]=title&per_page=3&conditions[publication_date][gte]=2025-03-01&conditions[agencies][]=environmental-protection-agency&conditions[type][]=RULE&conditions[type][]=PRORULE
+
+<br><br><br>
+
+
+
 <img width="618" alt="image" src="https://github.com/user-attachments/assets/5a1d48c7-e00b-49b7-9b0b-b754e2e68fb3" />
 
 
@@ -81,10 +91,3 @@ pip install -r requirements.txt
 python epa.py
 python fr.py -a epa -d 2024-10-01
 ```
-
-
-
-
-
-
-
