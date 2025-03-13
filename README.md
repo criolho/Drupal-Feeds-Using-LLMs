@@ -11,8 +11,13 @@ How to generate JSON feeds enhanced with LLMs for import to Drupal.  This repo d
 - Goals:  connect to Federal Register API and get JSON metadata for recently-published rules.  Then:
   * Make minor transformations to their field data for our matching fields in Drupal, e.g. prepending a citation to their title to match our Drupal node title best practices
   * Add 3 LLM-generated summaries individually focused on the needs of:  1) high school students, 2) corporate lobbyists, 3) environmental activists.
+<br><br><br>
+### Federal Register processing pipeline
 
-<img width="468" alt="image" src="https://github.com/user-attachments/assets/7aa61796-39c0-4d0b-a3ba-0a8369009f34" />
+High level overview of the data processing game plan:
+
+<img width="468" alt="image" src="https://github.com/user-attachments/assets/b8cb0187-b44b-4c2a-87f2-bc8667b31fe5" />
+<br><br><br>
 
 ### Inputs and Outputs
 
@@ -22,16 +27,19 @@ https://www.federalregister.gov/developers/documentation/api/v1#/Federal%20Regis
 Federal Register JSON request for the EPA:
 https://www.federalregister.gov/api/v1/documents.json?fields[]=abstract&fields[]=type&fields[]=pdf_url&fields[]=document_number&fields[]=publication_date&fields[]=agencies&fields[]=title&per_page=3&conditions[publication_date][gte]=2025-03-01&conditions[agencies][]=environmental-protection-agency&conditions[type][]=RULE&conditions[type][]=PRORULE
 
+<img width="692" alt="image" src="https://github.com/user-attachments/assets/009a96c0-96d5-462a-98fd-ae54edf7dbba" />
+
 <br><br><br>
 
 
 
-<img width="618" alt="image" src="https://github.com/user-attachments/assets/5a1d48c7-e00b-49b7-9b0b-b754e2e68fb3" />
+
 
 
 ## Civil Enforcement Actions by the EPA
 
-<img width="483" alt="image" src="https://github.com/user-attachments/assets/8f259812-589b-4f1a-8be3-d01c1b805d34" />
+<img width="590" alt="image" src="https://github.com/user-attachments/assets/5cc4f8e8-fe52-4d3a-bf11-eea32954ee97" />
+
 
 - Site:  https://www.epa.gov/enforcement/civil-and-cleanup-enforcement-cases-and-settlements
 - Background:  Centralized source for EPA civil actions for violations.  The EPA [historically] enforces a wide range of environmental laws, including the Clean Air Act (CAA) and Clean Water Act (CWA).
@@ -40,6 +48,11 @@ https://www.federalregister.gov/api/v1/documents.json?fields[]=abstract&fields[]
   * Extract penalty info
   * What specific laws were violated?
   * Categorize environmental issues
+ 
+## Inputs and Outputs
+
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/fa91cdb2-37c5-4001-b355-f069c96501ae" />
+
 
 ### LLM Considerations
 
@@ -58,7 +71,8 @@ Two Python libraries aid greatly in steering and validating the output of LLMs:
 Together, these libraries help us to tell LLMs precisely how we want them to structure their reply, e.g. JSON with particular fields and types of data; and validate the data before passing it on for downstream use.  In particular, we want anything GenAI-related to pass muster before importing it to Drupal.
 
 
-<img width="648" alt="image" src="https://github.com/user-attachments/assets/6dfda6e1-2f72-4c07-ae04-2b6cd783e50a" />
+<img width="679" alt="image" src="https://github.com/user-attachments/assets/9637a017-3e3a-4875-9293-8648a445a8b1" />
+
 
 ### Pydantic Field validators
 
