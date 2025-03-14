@@ -1,6 +1,6 @@
 ## Simple techniques
 
-Grab a web page with curl and select the HTML of interest (automatically discards the cruft), then summarize it - all from the command line.
+Grab a web page with curl and select the HTML of interest (automatically discards the cruft), then summarize it - all from the command line.  A shout out to Simon Willison:  https://simonwillison.net/2023/May/18/cli-tools-for-llms.
 
 ### Simple summarization prompt
 `curl -s https://www.epa.gov/enforcement/turn-14-clean-air-act-settlement-summary
