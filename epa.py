@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 from dotenv import load_dotenv
 from llm_factory import LLMFactory
-from pydantic import BaseModel, Field, field_validator, model_validator
+from pydantic import BaseModel, Field, field_validator
 from typing import List, Literal, Optional, Tuple, Dict
 from urllib.parse import urljoin
 import PyPDF2
