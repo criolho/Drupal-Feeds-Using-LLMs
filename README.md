@@ -85,6 +85,14 @@ After importing here's what a sample FR looks like:
 
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/fa91cdb2-37c5-4001-b355-f069c96501ae" />
 
+## Document content type we’ll be using for the EPA Civil Actions and its associated Feed
+
+<img width="904" alt="Document Content Type" src="https://github.com/user-attachments/assets/5f119ce4-a5ae-4c55-b28a-468cfd76381c" />
+
+<br><br>
+
+<img width="1134" alt="Document Feed" src="https://github.com/user-attachments/assets/953fe2e1-4859-46da-98f2-419f5b14d1cb" />
+<br><br><br>
 
 ## Drupal Taxonomies
 
