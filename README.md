@@ -32,7 +32,10 @@ https://www.federalregister.gov/api/v1/documents.json?fields[]=abstract&fields[]
 <br>
 ### Drupal
 
-On the Drupal side of things we have a content type Federal Register that has matching fields:![image](https://github.com/user-attachments/assets/a2fe3b0c-2a3a-4d95-8714-bf79c63d129e)
+On the Drupal side of things we have a content type Federal Register that has matching fields:
+
+<img width="778" alt="Screenshot 2025-03-16 at 4 09 45 AM" src="https://github.com/user-attachments/assets/b43c9eb2-e664-4a10-bda1-977a28093c36" />
+
 
 <br><br><br>
 
