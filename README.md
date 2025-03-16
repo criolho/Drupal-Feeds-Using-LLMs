@@ -86,6 +86,13 @@ After importing here's what a sample FR looks like:
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/fa91cdb2-37c5-4001-b355-f069c96501ae" />
 
 
+## Drupal Taxonomies
+
+Here are the sample vocabularies and terms used in the project.  Note that we dynamically import the Environmental Issues tags to our Python code at runtime, add them to our Pydantic model and use them as part of our prompt to the LLM to shape its behavior (“categorize documents according to these tags, and only these tags”).
+
+<img width="1201" alt="Drupal Taxonomies" src="https://github.com/user-attachments/assets/2dddaa31-b301-4009-8bb6-0d1c753f0ac0" />
+
+
 ### LLM Considerations
 
 Closed models, open source – they’re constantly leapfrogging one another.  At present, closed source foundation models produce more **reliable structured output**.  This may change in the future.
