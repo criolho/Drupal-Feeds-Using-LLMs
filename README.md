@@ -130,11 +130,24 @@ There are few “standards” yet for how websites should manage AI-generated co
 1. You need Python 3.12 or higher
 2. Create a new virtual env
 3. Install requirements
-4. Run scrapers
+4. Set env variables, e.g. use a .env file.  You’ll also need an API key for whatever LLMs you choose to you.  Then set an env variable such as OPENAI_KEY, GEMINI_KEY, ANTHROPIC_KEY, etc.
+5. Run scrapers
 ```
+# Example .env file:
+DB_HOST=127.0.0.1
+DB_PORT=49677
+DB_USER=db
+DB_PASSWORD=db
+DB_NAME=db
+
+
+# Set up virtual environment, activate it and install prerequisites:
 python -m venv feeds_scraper
 source feeds_scraper/bin/activate
 pip install -r requirements.txt
+
+# Run fr scraper for agency = EPA (see config/agencies.json file) retrieve Federal Registers dating 3/1/25 or later and generate a news summary.
+
+python fr.py -a epa -d 2025-03-01 -n
 python epa.py
-python fr.py -a epa -d 2024-10-01
 ```
