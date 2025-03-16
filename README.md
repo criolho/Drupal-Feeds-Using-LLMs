@@ -29,14 +29,14 @@ https://www.federalregister.gov/api/v1/documents.json?fields[]=abstract&fields[]
 
 <img width="692" alt="image" src="https://github.com/user-attachments/assets/009a96c0-96d5-462a-98fd-ae54edf7dbba" />
 
-<br>
+<br><br><br>
 ### Drupal
 
 On the Drupal side of things we have a content type Federal Register that has matching fields:
 
 <img width="778" alt="Federal Register Content Type" src="https://github.com/user-attachments/assets/b43c9eb2-e664-4a10-bda1-977a28093c36" />
 
-<br>
+<br><br><br>
 And our Federal Register Feed that will consume our JSON output looks like this:
 
 <img width="1272" alt="Federal Register Feed" src="https://github.com/user-attachments/assets/af23c4ad-fec2-4d1c-8cc2-81fc13372f6f" />
@@ -45,9 +45,27 @@ And our Federal Register Feed that will consume our JSON output looks like this:
 
 <br><br><br>
 
+### News Meta-summary
+
+We can also have our script create a News summary that iterates over all the Federal Registers we are importing and ask the LLM to summarize all the other summaries, a kind of meta-summary.  This should not be published as is – that’s “cheating” – but it could certainly form the skeleton on which a human editor could build.  Imagining we are using a simple Drupal "Article" content type we might see:
+
+
+<br><br>
+
+
+<img width="837" alt="News Metasummary" src="https://github.com/user-attachments/assets/1f02178e-375f-4905-952c-eb45f90c60a1" />
+
+<br><br>
+
+### Sample Federal Register
+
+After importing here's what a sample FR looks like:
+
+<img width="1035" alt="Sample Federal Register Node" src="https://github.com/user-attachments/assets/ae2fc5f8-6857-4c13-b2eb-dd8ddd54b46b" />
 
 
 
+<br><br><br>
 
 
 ## Civil Enforcement Actions by the EPA
