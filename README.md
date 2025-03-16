@@ -29,6 +29,11 @@ https://www.federalregister.gov/api/v1/documents.json?fields[]=abstract&fields[]
 
 <img width="692" alt="image" src="https://github.com/user-attachments/assets/009a96c0-96d5-462a-98fd-ae54edf7dbba" />
 
+<br>
+### Drupal
+
+On the Drupal side of things we have a content type Federal Register that has matching fields:![image](https://github.com/user-attachments/assets/a2fe3b0c-2a3a-4d95-8714-bf79c63d129e)
+
 <br><br><br>
 
 
