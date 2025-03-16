@@ -34,7 +34,13 @@ https://www.federalregister.gov/api/v1/documents.json?fields[]=abstract&fields[]
 
 On the Drupal side of things we have a content type Federal Register that has matching fields:
 
-<img width="778" alt="Screenshot 2025-03-16 at 4 09 45 AM" src="https://github.com/user-attachments/assets/b43c9eb2-e664-4a10-bda1-977a28093c36" />
+<img width="778" alt="Federal Register Content Type" src="https://github.com/user-attachments/assets/b43c9eb2-e664-4a10-bda1-977a28093c36" />
+
+<br>
+And our Federal Register Feed that will consume our JSON output looks like this:
+
+<img width="1272" alt="Federal Register Feed" src="https://github.com/user-attachments/assets/af23c4ad-fec2-4d1c-8cc2-81fc13372f6f" />
+
 
 
 <br><br><br>
