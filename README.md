@@ -100,7 +100,13 @@ Here are the sample vocabularies and terms used in the project.  Note that we dy
 
 <img width="1201" alt="Drupal Taxonomies" src="https://github.com/user-attachments/assets/2dddaa31-b301-4009-8bb6-0d1c753f0ac0" />
 
+<br><br><br>
+## Example civil action Document import:
+<img width="914" alt="EPA Civil Action document example" src="https://github.com/user-attachments/assets/4859c051-fe49-4336-b617-238edec5078d" />
 
+
+
+<br><br><br>
 ### LLM Considerations
 
 Closed models, open source – they’re constantly leapfrogging one another.  At present, closed source foundation models produce more **reliable structured output**.  This may change in the future.
