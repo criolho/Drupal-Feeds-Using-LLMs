@@ -145,8 +145,11 @@ There are few “standards” yet for how websites should manage AI-generated co
 - It is quite likely that you’ll use different LLMs over time.  You may want to have a vocabulary for these as well with terms such as:  claude-3-7-sonnet-latest, gpt-4o, gpt-4o-mini, gemini-2.0-flash
 - If you’re going to the trouble of extracting lots of raw text for use in GenAI, even though in its raw state it may not be suitable for end users it might be good for a) fulltext search; b) future GenAI passes over the same nodes
 - People are justifiably wary of what’s being pushed on them – consider including preamble / info text such as “This article contains an AI-generated summary” that fully informs people what they’re getting.
+- It's possible that Drupal isn't the right place to perform auditing and bookkeeping.  In the examples presented here note that we're using LLMs at the field level - "AI Tags" as applied in these examples is at the node level.  Having field-level tags for tracking AI may be a bit much to do within Drupal itself and an external database may be a better bet.  Or not - there are no best practices yet but it's worth keeping in mind the idea of field-level auditing of LLM usage.  Drupal is noteworthy precisely because of its structured approach to data, including fields, and we may want to respect (and take advantage of) that affordance of granularity when considering an LLM usage audit strategy.
 
 ## To Run the Scrapers
+
+Note that these are barebones scrapers that only pull content from the first page of results.  A fully-fledged scraping process would involve paging.  That isn't the focus of this repo but the underlying code can readily be extended to accommodate paging.
 
 1. You need Python 3.12 or higher
 2. Create a new virtual env
@@ -170,5 +173,7 @@ pip install -r requirements.txt
 # Run fr scraper for agency = EPA (see config/agencies.json file) retrieve Federal Registers dating 3/1/25 or later and generate a news summary.
 
 python fr.py -a epa -d 2025-03-01 -n
-python epa.py
+
+# Grab first 5 rows of EPA enforcement actions
+python epa.py -numrecs 5
 ```
