@@ -1,5 +1,8 @@
 # Drupal Feeds Using LLMs
-How to generate JSON feeds enhanced with LLMs for import to Drupal.  This repo demonstrates two scrapers, one that interacts with the Federal Register API and the other which scrapes an EPA web page. 
+
+If you regularly bring data into Drupal from external sources, you may be able to enrich the data using LLMs and a bit of custom programming.  This repo demos a workflow utilizing Python scripts running on a Linux server, web scraping, LLMs and the Drupal Feeds module.  Your tech stack may be different but the techniques discussed in this talk are easily translated to other environments.
+
+The repo demonstrates two scrapers, one that interacts with the Federal Register API and the other which scrapes an EPA web page. The scrapers output JSON suitable for Drupal feeds import.
 
 ## Federal Register
 
