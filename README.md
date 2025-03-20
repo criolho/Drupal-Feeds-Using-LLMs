@@ -106,7 +106,8 @@ Here are the sample vocabularies and terms used in the project.  Note that we dy
 
 <br><br><br>
 ## Example civil action Document import:
-<img width="914" alt="EPA Civil Action document example" src="https://github.com/user-attachments/assets/4859c051-fe49-4336-b617-238edec5078d" />
+
+<img width="914" alt="EPA Civil Action document example" src="https://github.com/user-attachments/assets/897a7a19-af5a-4e92-89dd-533cf4fcd709" />
 
 
 
