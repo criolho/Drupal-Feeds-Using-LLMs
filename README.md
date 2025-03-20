@@ -170,6 +170,10 @@ An important additional consideration is tracking Drupal LLM usage.  Drupal is n
    - date / time you ran the model
 - You might also consider storing the raw text blobs from PDFs externally as well so the Drupal DB doesn't bloat unnecessarily).
 
+## Drupal demo
+
+You can create the simple demo site that corresponds to the scraping demo per https://github.com/criolho/Drupal-Feeds-Using-LLMs/blob/master/feeds-ai/README.md.
+
 ## To Run the Scrapers
 
 Note that these are barebones scrapers that only pull content from the first page of results.  A fully-fledged scraping process would involve paging.  That isn't the focus of this repo but the underlying code can readily be extended to accommodate paging.
