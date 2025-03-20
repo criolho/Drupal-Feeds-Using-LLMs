@@ -128,10 +128,9 @@ Two Python libraries aid greatly in steering and validating the output of LLMs:
 - [Pydantic](https://docs.pydantic.dev/latest/) ensures that data meets certain criteria before being sent downstream.   It’s used in many contexts, not just with LLMs.  For example, in validating inputs to an API or outputs to a database.  A key feature for LLM usage is that Pydantic allows you to define a “data model” with rich annotations suitable for use with the Instructor library.
 - [Instructor](https://python.useinstructor.com/) helps steer LLMs toward a desired behavior.  In particular, you can take a deeply annotated Pydantic model and use it to provide detailed prompt instructions to an LLM, then verify that the return data from the LLM conforms to your expectations. 
 
-Together, these libraries help us to tell LLMs precisely how we want them to structure their reply, e.g. JSON with particular fields and types of data; and validate the data before passing it on for downstream use.  In particular, we want anything GenAI-related to pass muster before importing it to Drupal.
+These libraries help us to tell LLMs precisely how we want them to structure their reply, e.g. JSON with particular fields and types of data; and validate the data before passing it on for downstream use.  In particular, we want anything GenAI-related to pass muster before importing it to Drupal.  Drupal, which is all about structured content, does well by partnering with a robust framework for getting structured output from LLMs.
 
-Drupal, Pydantic and Instructor work well together as they all have structured data as a core idea.
-
+Here are the models used for the EPA scraper:
 
 <img width="679" alt="image" src="https://github.com/user-attachments/assets/9637a017-3e3a-4875-9293-8648a445a8b1" />
 
