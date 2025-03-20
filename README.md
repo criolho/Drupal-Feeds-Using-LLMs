@@ -130,6 +130,8 @@ Two Python libraries aid greatly in steering and validating the output of LLMs:
 
 Together, these libraries help us to tell LLMs precisely how we want them to structure their reply, e.g. JSON with particular fields and types of data; and validate the data before passing it on for downstream use.  In particular, we want anything GenAI-related to pass muster before importing it to Drupal.
 
+Drupal, Pydantic and Instructor work well together as they all have structured data as a core idea.
+
 
 <img width="679" alt="image" src="https://github.com/user-attachments/assets/9637a017-3e3a-4875-9293-8648a445a8b1" />
 
