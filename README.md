@@ -64,7 +64,8 @@ We can also have our script create a News summary that iterates over all the Fed
 
 After importing here's what a sample FR looks like:
 
-<img width="1035" alt="Sample Federal Register Node" src="https://github.com/user-attachments/assets/ae2fc5f8-6857-4c13-b2eb-dd8ddd54b46b" />
+<img width="1035" alt="sample federal register" src="https://github.com/user-attachments/assets/a155ab4f-3aec-4b4a-a84a-7e9b00ed3a6d" />
+
 
 
 
