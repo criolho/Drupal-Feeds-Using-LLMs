@@ -137,7 +137,7 @@ Here are the models used for the EPA scraper:
 
 ### Pydantic Field validators
 
-These are optional functions you can write that automatically run against fields before Pydantic signs off on the data.  You can use them to simply confirm that data matches certain criteria, or you can modify the data to conform your needs.  The point is that this is a structured way of enforcing standards for your data.
+These are optional functions you can write that automatically run against fields before Pydantic signs off on the data.  You can use them to simply confirm that data matches certain criteria, or you can modify the data to match your needs.  The point is that this is a structured way of enforcing standards for your data.
 
 What we’re choosing to validate:
 
@@ -152,8 +152,8 @@ There are few “standards” yet for how websites should manage AI-generated co
 - Creating a vocabulary “AI Tags” to help you keep track of nodes to which you’ve applied GenAI.  For example:  AI-Generated Text, AI-Generated Categories, or AI-Generated Entity Extraction
 - It is quite likely that you’ll use different LLMs over time.  You may want to have a vocabulary for these as well with terms such as:  claude-3-7-sonnet-latest, gpt-4o, gpt-4o-mini, gemini-2.0-flash
 - If you’re going to the trouble of extracting lots of raw text for use in GenAI, even though in its raw state it may not be suitable for end users it might be good for a) fulltext search; b) future GenAI passes over the same nodes
-- People are justifiably wary of what’s being pushed on them – consider including preamble / info text such as “This article contains an AI-generated summary” that fully informs people what they’re getting.
-- It's possible that Drupal isn't the right place to perform auditing and bookkeeping.  In the examples presented here note that we're using LLMs at the field level - "AI Tags" as applied in these examples is at the node level.  Having field-level tags for tracking AI may be a bit much to do within Drupal itself and an external database may be a better bet.  Or not - there are no best practices yet but it's worth keeping in mind the idea of field-level auditing of LLM usage.  Drupal is noteworthy precisely because of its structured approach to data, including fields, and we may want to respect (and take advantage of) that affordance of granularity when considering an LLM usage audit strategy.
+- People are justifiably wary of what’s being pushed on them – consider including preamble / disclaimer text such as “This article contains an AI-generated summary” that fully informs people what they’re getting.
+- It's possible that Drupal isn't the right place to perform auditing and bookkeeping.  In the examples presented here note that we're using LLMs at the Drupal field level - whereas the "AI Tags" as applied in these examples are assigned at the node level.  Having field-level tags for tracking AI may be a bit much to do within Drupal itself and an external auditing database may be a better bet (you might also wish to store the raw text blobs from PDFs externally as well so the Drupal DB doesn't bloat unnecessarily).  Or not - there are no best practices yet but it's worth keeping in mind the idea of field-level auditing of LLM usage.  Drupal is noteworthy precisely because of its structured approach to data, including fields, and we may want to respect (and take advantage of) that affordance of granularity when considering an LLM usage audit strategy.
 
 ## To Run the Scrapers
 
