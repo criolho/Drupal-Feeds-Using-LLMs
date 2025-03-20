@@ -7,7 +7,7 @@ import pymysql
 
 def load_config():
     """
-    Load database configuration from environment variables.
+    Load Drupal database configuration from environment variables.
     Returns:
         dict: Database configuration parameters
     Raises:
