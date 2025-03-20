@@ -160,14 +160,14 @@ There are few “standards” yet for how websites should manage AI-generated co
 - If you’re going to the trouble of extracting lots of raw text for use in GenAI, even though in its raw state it may not be suitable for end users it might be good for a) fulltext search; b) future GenAI passes over the same nodes
 - People are justifiably wary of what’s being pushed on them – consider including preamble / disclaimer text such as “This article contains an AI-generated summary” that fully informs people what they’re getting.
 
-An important additional consideration is tracking LLM use within Drupal.  Drupal is noteworthy precisely because of its structured approach to data, including fields, and we may want to respect (and take advantage of) that affordance of granularity when considering an LLM usage audit strategy.  It's possible that Drupal isn't the right place to perform auditing and bookkeeping:
+An important additional consideration is tracking Drupal LLM usage.  Drupal is noteworthy precisely because of its structured approach to data, including fields, and we may want to respect (and take advantage of) that affordance of granularity when considering an LLM usage audit strategy.  It's possible that Drupal isn't the right place to perform auditing and bookkeeping and that it'll be easier to use an external database.  Companies in the future are likely to have external LLMOps systems that are used for more assets than just Drupal so that might be the way to go.
 
 - In the examples presented here note that we're using LLMs at the Drupal field level - whereas the "AI Tags" as applied in these examples are assigned at the node level.  Having field-level tags for tracking AI may be a bit much to do within Drupal itself and an external auditing database may be a better bet.
 - MLOps is an emerging discipline.  Keeping track of what content in Drupal has been "touched" by LLMs raises many questions.  For any given Drupal field there are multiple things you may want to track.  Given that the behavior of LLMs is complicated, varies over time and model version, the prompt, etc. here is a minimum you might consider tracking:
-  -- which LLM model and version did you use, e.g. OpenAI gpt-4o, Anthropic Claude 3.7, etc.
-  -- the actual text of the prompt you used - rather than repeat this text over and over you might use a taxonomy
-  -- token usage
-  -- date / time you ran the model
+   - which LLM model and version did you use, e.g. OpenAI gpt-4o, Anthropic Claude 3.7, etc.
+   - the actual text of the prompt you used - rather than repeat this text over and over you might use a taxonomy
+   - token usage
+   - date / time you ran the model
 - You might also consider storing the raw text blobs from PDFs externally as well so the Drupal DB doesn't bloat unnecessarily).
 
 ## To Run the Scrapers
