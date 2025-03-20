@@ -117,14 +117,16 @@ Here are the sample vocabularies and terms used in the project.  Note that we dy
 Closed models, open source – they’re constantly leapfrogging one another.  At present, closed source foundation models produce more **reliable structured output**.  This may change in the future.
 
 The code here has options for OpenAI’s “gpt-4o”, Anthropic’s "claude-3-7-sonnet-latest" and Google’s “gemini-2.0-flash”.  Currently we default to **Gemini Flash** because it is fast, reliable, inexpensive (as of March 2025:   input $0.10 / 1,000,000 input tokens, $0.40 / 1,000,000 output tokens) and has a long context window (1,000,000 tokens) that can readily accommodate multi-hundred page PDFs.
-**Optimization** – a custom title_exists() function checks to see if we already have a node in Drupal, saving on unnecessary LLM calls
+
+<br><br>
+**Optimization** – a custom title_exists() function checks to see if we already have a node in Drupal; if so, we avoid making unnecessary LLM calls.  This is essential when performing web scraping at scale.
 
 ### Pydantic and Instructor
 
 Two Python libraries aid greatly in steering and validating the output of LLMs: 
 
-- Pydantic ensures that data meets certain criteria before being sent downstream.   It’s used in many contexts, not just with LLMs.  For example, in validating inputs to an API or outputs to a database.  A key feature for LLM usage is that Pydantic allows you to define a “data model” with rich annotations suitable for use with the Instructor library.
-- Instructor helps steer LLMs toward a desired behavior.  In particular, you can take a deeply annotated Pydantic model and use it to provide detailed prompt instructions to an LLM, then verify that the return data from the LLM conforms to your expectations. 
+- [Pydantic](https://docs.pydantic.dev/latest/) ensures that data meets certain criteria before being sent downstream.   It’s used in many contexts, not just with LLMs.  For example, in validating inputs to an API or outputs to a database.  A key feature for LLM usage is that Pydantic allows you to define a “data model” with rich annotations suitable for use with the Instructor library.
+- [Instructor](https://python.useinstructor.com/) helps steer LLMs toward a desired behavior.  In particular, you can take a deeply annotated Pydantic model and use it to provide detailed prompt instructions to an LLM, then verify that the return data from the LLM conforms to your expectations. 
 
 Together, these libraries help us to tell LLMs precisely how we want them to structure their reply, e.g. JSON with particular fields and types of data; and validate the data before passing it on for downstream use.  In particular, we want anything GenAI-related to pass muster before importing it to Drupal.
 
