@@ -1,0 +1,198 @@
+uuid: 141cc5c5-d310-44b1-81c6-8fc0e295d7f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.document.body
+    - field.field.node.document.field_ai_tags
+    - field.field.node.document.field_environmental_issues
+    - field.field.node.document.field_laws
+    - field.field.node.document.field_llm
+    - field.field.node.document.field_penalty
+    - field.field.node.document.field_source_url
+    - node.type.document
+  module:
+    - feeds_ex
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      af7a16dc-74cb-4801-97e4-a785605519a0:
+        separator: ','
+        limit: null
+        uuid: af7a16dc-74cb-4801-97e4-a785605519a0
+        plugin: explode
+        source: flattened_federal_laws
+        weight: 0
+        label: Explode
+label: Document
+id: document
+description: ''
+help: ''
+import_period: -1
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: jsonpath
+parser_configuration:
+  context:
+    value: '$.documents[*]'
+  source_encoding:
+    - auto
+  display_errors: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: document
+  langcode: en
+  insert_new: 1
+  update_existing: 0
+  update_non_existent: _keep
+  skip_hash_check: false
+  skip_validation: false
+  skip_validation_types: {  }
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  title:
+    value: title
+    label: title
+    machine_name: title
+    type: json
+  body:
+    value: summary
+    label: summary
+    machine_name: body
+    type: json
+  ai_tags:
+    value: 'ai_tags[*]'
+    label: 'ai_tags[*]'
+    machine_name: ai_tags
+    type: json
+  environmental_issues:
+    value: 'environmental_issues[*]'
+    label: 'environmental_issues[*]'
+    machine_name: environmental_issues
+    type: json
+  flattened_federal_laws:
+    value: flattened_federal_laws
+    label: flattened_federal_laws
+    machine_name: flattened_federal_laws
+    type: json
+  llm:
+    value: llm
+    label: llm
+    machine_name: llm
+    type: json
+  penalty:
+    value: penalty
+    label: penalty
+    machine_name: penalty
+    type: json
+  raw_text:
+    value: raw_text
+    label: raw_text
+    machine_name: raw_text
+    type: json
+  date:
+    value: date
+    label: date
+    machine_name: date
+    type: json
+  link:
+    value: link
+    label: link
+    machine_name: link
+    type: json
+  source_url:
+    value: source_url
+    label: source_url
+    machine_name: source_url
+    type: json
+mappings:
+  -
+    target: title
+    map:
+      value: title
+    settings:
+      language: null
+    unique:
+      value: 1
+  -
+    target: body
+    map:
+      value: body
+      summary: ''
+    settings:
+      language: ''
+      format: full_html
+  -
+    target: field_ai_tags
+    map:
+      target_id: environmental_issues
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: ai_tags
+  -
+    target: field_environmental_issues
+    map:
+      target_id: environmental_issues
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: environmental_issues
+  -
+    target: field_laws
+    map:
+      value: flattened_federal_laws
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_llm
+    map:
+      target_id: llm
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: llm
+  -
+    target: field_penalty
+    map:
+      value: raw_text
+    settings:
+      language: null
+  -
+    target: created
+    map:
+      value: date
+    settings:
+      language: null
+      timezone: UTC
+  -
+    target: field_source_url
+    map:
+      uri: ''
+      title: link
+    settings:
+      language: null
+  -
+    target: field_source_url
+    map:
+      uri: source_url
+      title: ''
+    settings:
+      language: null

@@ -1,0 +1,24 @@
+uuid: 1a550137-2d98-4421-b5aa-6ef54f475218
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lobbyist_summary
+    - filter.format.full_html
+    - node.type.federal_register
+  module:
+    - text
+id: node.federal_register.field_lobbyist_summary
+field_name: field_lobbyist_summary
+entity_type: node
+bundle: federal_register
+label: 'Lobbyist Summary'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

@@ -1,0 +1,29 @@
+uuid: 7224549b-2079-4d41-99e0-258061fe3c23
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_federal_register_type
+    - node.type.federal_register
+    - taxonomy.vocabulary.federal_register_type
+id: node.federal_register.field_federal_register_type
+field_name: field_federal_register_type
+entity_type: node
+bundle: federal_register
+label: 'Federal Register Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      federal_register_type: federal_register_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,9 @@
+uuid: 349b61b7-bcba-4c7d-b603-91d05f5b31ee
+langcode: en
+status: true
+dependencies: {  }
+name: 'AI Tags'
+vid: ai_tags
+description: 'Tags helpful for keeping track of how AI is applied to our content'
+weight: -9
+new_revision: false

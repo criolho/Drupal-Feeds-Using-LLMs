@@ -1,0 +1,22 @@
+uuid: f7ba7559-568f-4a13-8781-7edb7051d51b
+langcode: en
+status: true
+dependencies:
+  theme:
+    - acquia_claro
+_core:
+  default_config_hash: nm69sJVHKeI6c1KLB5BOhb56dziB9jez8qYxvI7mjvM
+id: acquia_claro_primary_local_tasks
+theme: acquia_claro
+region: header
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

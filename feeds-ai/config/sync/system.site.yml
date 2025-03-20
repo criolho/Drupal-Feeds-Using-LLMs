@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: ijfbzDTN4CbE7Sr-6ubWzy_t1vH4OtU1doNCLssVz-4
+langcode: en
+uuid: 7e0be640-16d0-4d64-8203-8ac55befd851
+name: 'Feeds AI Demo'
+mail: admin@example.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/276
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+mail_notification: null

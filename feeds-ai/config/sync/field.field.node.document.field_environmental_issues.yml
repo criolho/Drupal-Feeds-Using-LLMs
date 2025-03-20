@@ -1,0 +1,29 @@
+uuid: a6e79c2c-ffcd-4037-96a7-7bd9b6d84544
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_environmental_issues
+    - node.type.document
+    - taxonomy.vocabulary.environmental_issues
+id: node.document.field_environmental_issues
+field_name: field_environmental_issues
+entity_type: node
+bundle: document
+label: 'Environmental Issues'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      environmental_issues: environmental_issues
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

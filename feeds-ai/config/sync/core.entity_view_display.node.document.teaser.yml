@@ -1,0 +1,46 @@
+uuid: 75ea86eb-7254-4a59-8217-9d086b6336e2
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.document.body
+    - field.field.node.document.feeds_item
+    - field.field.node.document.field_ai_tags
+    - field.field.node.document.field_environmental_issues
+    - field.field.node.document.field_laws
+    - field.field.node.document.field_llm
+    - field.field.node.document.field_penalty
+    - field.field.node.document.field_raw_text
+    - field.field.node.document.field_source_url
+    - node.type.document
+  module:
+    - text
+    - user
+id: node.document.teaser
+targetEntityType: node
+bundle: document
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  feeds_item: true
+  field_ai_tags: true
+  field_environmental_issues: true
+  field_laws: true
+  field_llm: true
+  field_penalty: true
+  field_raw_text: true
+  field_source_url: true

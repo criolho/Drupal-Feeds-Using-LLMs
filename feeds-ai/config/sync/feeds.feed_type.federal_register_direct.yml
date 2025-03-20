@@ -1,0 +1,142 @@
+uuid: 9e92b962-34fa-4133-91b4-fa4e0610271e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.federal_register.body
+    - field.field.node.federal_register.field_agency
+    - field.field.node.federal_register.field_document_number
+    - field.field.node.federal_register.field_federal_register_type
+    - field.field.node.federal_register.field_pdf_url
+    - node.type.federal_register
+  module:
+    - feeds_ex
+    - node
+label: 'Federal Register - Direct'
+id: federal_register_direct
+description: ''
+help: ''
+import_period: -1
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: jsonpath
+parser_configuration:
+  context:
+    value: '$.results[*]'
+  source_encoding:
+    - auto
+  display_errors: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: federal_register
+  langcode: en
+  insert_new: 1
+  update_existing: 0
+  update_non_existent: _keep
+  skip_hash_check: false
+  skip_validation: false
+  skip_validation_types: {  }
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  title:
+    value: title
+    label: title
+    machine_name: title
+    type: json
+  agencies_name:
+    value: 'agencies[*].name'
+    label: 'agencies[*].name'
+    machine_name: agencies_name
+    type: json
+  document_number:
+    value: document_number
+    label: document_number
+    machine_name: document_number
+    type: json
+  type:
+    value: type
+    label: type
+    machine_name: type
+    type: json
+  abstract:
+    value: abstract
+    label: abstract
+    machine_name: abstract
+    type: json
+  pdf_url:
+    value: pdf_url
+    label: pdf_url
+    machine_name: pdf_url
+    type: json
+  publication_date:
+    value: publication_date
+    label: publication_date
+    machine_name: publication_date
+    type: json
+mappings:
+  -
+    target: title
+    map:
+      value: title
+    settings:
+      language: null
+    unique:
+      value: 1
+  -
+    target: field_agency
+    map:
+      target_id: agencies_name
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: agency
+  -
+    target: field_document_number
+    map:
+      value: document_number
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_federal_register_type
+    map:
+      target_id: type
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: federal_register_type
+  -
+    target: body
+    map:
+      value: abstract
+      summary: ''
+    settings:
+      language: ''
+      format: full_html
+  -
+    target: field_pdf_url
+    map:
+      uri: pdf_url
+      title: ''
+    settings:
+      language: null
+  -
+    target: created
+    map:
+      value: publication_date
+    settings:
+      language: ''
+      timezone: America/New_York

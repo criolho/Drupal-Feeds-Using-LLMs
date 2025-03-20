@@ -1,0 +1,29 @@
+uuid: 272e5655-84b0-49ea-8f99-b6720ad8b5d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_llm
+    - node.type.federal_register
+    - taxonomy.vocabulary.llm
+id: node.federal_register.field_llm
+field_name: field_llm
+entity_type: node
+bundle: federal_register
+label: LLM
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      llm: llm
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

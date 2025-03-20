@@ -1,0 +1,288 @@
+uuid: 3f9629ea-aa78-418a-9936-cf793dacbacf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.federal_register.body
+    - field.field.node.federal_register.field_activist_summary
+    - field.field.node.federal_register.field_agency
+    - field.field.node.federal_register.field_ai_tags
+    - field.field.node.federal_register.field_citation
+    - field.field.node.federal_register.field_document_number
+    - field.field.node.federal_register.field_effective_on
+    - field.field.node.federal_register.field_federal_register_type
+    - field.field.node.federal_register.field_high_school_summary
+    - field.field.node.federal_register.field_llm
+    - field.field.node.federal_register.field_lobbyist_summary
+    - field.field.node.federal_register.field_raw_text
+    - node.type.federal_register
+  module:
+    - feeds_ex
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      52da85af-9493-43eb-8a72-3c35446a6271:
+        separator: ','
+        limit: null
+        uuid: 52da85af-9493-43eb-8a72-3c35446a6271
+        plugin: explode
+        source: ai_tags
+        weight: 0
+        label: Explode
+      d686fa06-cb17-43b0-a164-58ea725cf2f2:
+        separator: ','
+        limit: null
+        uuid: d686fa06-cb17-43b0-a164-58ea725cf2f2
+        plugin: explode
+        source: agency_names
+        weight: 0
+        label: Explode
+label: 'Federal Register'
+id: federal_register
+description: ''
+help: ''
+import_period: -1
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: jsonpath
+parser_configuration:
+  context:
+    value: '$.documents[*]'
+  source_encoding:
+    - auto
+  display_errors: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: federal_register
+  langcode: en
+  insert_new: 1
+  update_existing: 0
+  update_non_existent: _keep
+  skip_hash_check: false
+  skip_validation: false
+  skip_validation_types: {  }
+  authorize: false
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  title:
+    value: title
+    label: title
+    machine_name: title
+    type: json
+  agency:
+    value: agency
+    label: agency
+    machine_name: agency
+    type: json
+  abstract:
+    value: abstract
+    label: abstract
+    machine_name: abstract
+    type: json
+  '':
+    value: ''
+    label: ''
+    machine_name: ''
+    type: json
+  document_number:
+    value: document_number
+    label: document_number
+    machine_name: document_number
+    type: json
+  type:
+    value: type
+    label: type
+    machine_name: type
+    type: json
+  agency_names:
+    value: agency_names
+    label: agency_names
+    machine_name: agency_names
+    type: json
+  citation:
+    value: citation
+    label: citation
+    machine_name: citation
+    type: json
+  effective_on:
+    value: effective_on
+    label: effective_on
+    machine_name: effective_on
+    type: json
+  pdf_url:
+    value: pdf_url
+    label: pdf_url
+    machine_name: pdf_url
+    type: json
+  article_text:
+    value: article_text
+    label: article_text
+    machine_name: article_text
+    type: json
+  high_school_summary:
+    value: high_school_summary
+    label: high_school_summary
+    machine_name: high_school_summary
+    type: json
+  lobbyist_summary:
+    value: lobbyist_summary
+    label: lobbyist_summary
+    machine_name: lobbyist_summary
+    type: json
+  activist_summary:
+    value: activist_summary
+    label: activist_summary
+    machine_name: activist_summary
+    type: json
+  llm:
+    value: llm
+    label: llm
+    machine_name: llm
+    type: json
+  ai_tags:
+    value: ai_tags
+    label: ai_tags
+    machine_name: ai_tags
+    type: json
+  topics:
+    value: topics
+    label: topics
+    machine_name: topics
+    type: json
+  publication_date:
+    value: publication_date
+    label: publication_date
+    machine_name: publication_date
+    type: json
+  file_url:
+    value: pdf_url
+    label: pdf_url
+    machine_name: file_url
+    type: json
+mappings:
+  -
+    target: title
+    map:
+      value: title
+    settings:
+      language: null
+    unique:
+      value: 1
+  -
+    target: body
+    map:
+      value: abstract
+      summary: ''
+    settings:
+      language: ''
+      format: full_html
+  -
+    target: field_document_number
+    map:
+      value: document_number
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_federal_register_type
+    map:
+      target_id: type
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: federal_register_type
+  -
+    target: field_agency
+    map:
+      target_id: agency_names
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: agency
+  -
+    target: field_citation
+    map:
+      value: citation
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_effective_on
+    map:
+      value: effective_on
+    settings:
+      language: null
+      timezone: UTC
+  -
+    target: field_raw_text
+    map:
+      value: article_text
+    settings:
+      language: null
+  -
+    target: field_high_school_summary
+    map:
+      value: high_school_summary
+    settings:
+      language: ''
+      format: full_html
+  -
+    target: field_lobbyist_summary
+    map:
+      value: lobbyist_summary
+    settings:
+      language: ''
+      format: full_html
+  -
+    target: field_activist_summary
+    map:
+      value: activist_summary
+    settings:
+      language: ''
+      format: full_html
+  -
+    target: field_llm
+    map:
+      target_id: llm
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: llm
+  -
+    target: field_ai_tags
+    map:
+      target_id: ai_tags
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: ai_tags
+  -
+    target: created
+    map:
+      value: publication_date
+    settings:
+      language: ''
+      timezone: America/New_York
+  -
+    target: field_pdf_url
+    map:
+      uri: file_url
+      title: ''
+    settings:
+      language: null

@@ -1,0 +1,21 @@
+uuid: a174ad66-0dd2-4150-a496-891ed0b58a32
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_effective_on
+    - node.type.federal_register
+  module:
+    - datetime
+id: node.federal_register.field_effective_on
+field_name: field_effective_on
+entity_type: node
+bundle: federal_register
+label: 'Effective On'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

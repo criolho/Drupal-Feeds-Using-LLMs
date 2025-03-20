@@ -1,0 +1,22 @@
+uuid: ecc8a1d2-a46e-4f56-8332-f690f329fa86
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - uswds_base
+_core:
+  default_config_hash: kZYm0IFDqdGZFVnT4IcGM4VknJc3u4SBbsI71Gz8qFM
+id: uswds_base_help
+theme: uswds_base
+region: help
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

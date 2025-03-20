@@ -1,0 +1,20 @@
+uuid: 2797b37a-513f-47a1-b7fe-9d42b6303583
+langcode: en
+status: true
+dependencies:
+  theme:
+    - thex
+_core:
+  default_config_hash: exERv6Z996Hgjku_mgxPoq-dz4_02VEY3UeYf3hQJpI
+id: thex_page_title
+theme: thex
+region: page_header
+weight: -6
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

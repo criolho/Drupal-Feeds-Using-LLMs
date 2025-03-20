@@ -1,0 +1,19 @@
+uuid: b63587da-dec1-4fcd-bb39-5f60422141ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document_number
+    - node.type.federal_register
+id: node.federal_register.field_document_number
+field_name: field_document_number
+entity_type: node
+bundle: federal_register
+label: 'Document Number'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

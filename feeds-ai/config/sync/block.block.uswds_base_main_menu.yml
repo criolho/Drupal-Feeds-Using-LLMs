@@ -1,0 +1,27 @@
+uuid: d47acbdd-645c-49a2-a1f1-c513d8e3bae3
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - uswds_base
+_core:
+  default_config_hash: YGYt3U4uee_Ug-Ezrpkz1mNl1uog6EpC8OvnEIa4vV4
+id: uswds_base_main_menu
+theme: uswds_base
+region: primary_menu
+weight: 10
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: false
+visibility: {  }

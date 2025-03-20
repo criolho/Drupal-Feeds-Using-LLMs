@@ -1,0 +1,22 @@
+uuid: 74c75073-c769-468e-b3ef-c458e8165b83
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - acquia_claro
+_core:
+  default_config_hash: T1gLcaIdlPEFPEI7mnfUrT4tgieihZh_mFU-XaO45hE
+id: acquia_claro_messages
+theme: acquia_claro
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

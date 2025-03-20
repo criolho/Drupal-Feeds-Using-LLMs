@@ -1,0 +1,20 @@
+uuid: 720ba520-b390-4f77-9d52-700b56520af2
+langcode: en
+status: true
+dependencies:
+  theme:
+    - acquia_claro
+_core:
+  default_config_hash: 4hmtXGPuYtxBsiHvp01nbfLbSMXzUi82MtXKoqFQlq0
+id: acquia_claro_page_title
+theme: acquia_claro
+region: header
+weight: -30
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

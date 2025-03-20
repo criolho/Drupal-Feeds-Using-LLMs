@@ -1,0 +1,29 @@
+uuid: b32144ee-adfd-44a6-8465-15381534bf70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_agency
+    - node.type.federal_register
+    - taxonomy.vocabulary.agency
+id: node.federal_register.field_agency
+field_name: field_agency
+entity_type: node
+bundle: federal_register
+label: Agency
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      agency: agency
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

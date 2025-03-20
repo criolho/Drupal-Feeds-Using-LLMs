@@ -1,0 +1,18 @@
+uuid: 2ae3ad62-069d-45bb-b4d7-199012b33b20
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Document
+type: document
+description: 'Content type with metadata related to government enforcement documents'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,9 @@
+uuid: 96654c5f-ba01-41c3-bc99-3b1c8bf76573
+langcode: en
+status: true
+dependencies: {  }
+name: LLM
+vid: llm
+description: 'Large Language Models used for generation'
+weight: -8
+new_revision: false

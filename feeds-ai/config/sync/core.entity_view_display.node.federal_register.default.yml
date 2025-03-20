@@ -1,0 +1,121 @@
+uuid: 4ea88062-989d-44a3-ad07-7c52d5821435
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.federal_register.body
+    - field.field.node.federal_register.feeds_item
+    - field.field.node.federal_register.field_activist_summary
+    - field.field.node.federal_register.field_agency
+    - field.field.node.federal_register.field_ai_tags
+    - field.field.node.federal_register.field_citation
+    - field.field.node.federal_register.field_document_number
+    - field.field.node.federal_register.field_effective_on
+    - field.field.node.federal_register.field_federal_register_type
+    - field.field.node.federal_register.field_high_school_summary
+    - field.field.node.federal_register.field_llm
+    - field.field.node.federal_register.field_lobbyist_summary
+    - field.field.node.federal_register.field_pdf_url
+    - field.field.node.federal_register.field_raw_text
+    - node.type.federal_register
+  module:
+    - datetime
+    - link
+    - text
+    - user
+id: node.federal_register.default
+targetEntityType: node
+bundle: federal_register
+mode: default
+content:
+  body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_activist_summary:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_agency:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_citation:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_document_number:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_effective_on:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: olivero_medium
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_federal_register_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_high_school_summary:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_lobbyist_summary:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_pdf_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  feeds_item: true
+  field_ai_tags: true
+  field_llm: true
+  field_raw_text: true

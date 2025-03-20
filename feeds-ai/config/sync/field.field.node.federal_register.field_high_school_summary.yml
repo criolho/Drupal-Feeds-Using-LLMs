@@ -1,0 +1,24 @@
+uuid: 7c5dd815-4f48-4550-9061-23923613056d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_high_school_summary
+    - filter.format.full_html
+    - node.type.federal_register
+  module:
+    - text
+id: node.federal_register.field_high_school_summary
+field_name: field_high_school_summary
+entity_type: node
+bundle: federal_register
+label: 'High School Summary'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

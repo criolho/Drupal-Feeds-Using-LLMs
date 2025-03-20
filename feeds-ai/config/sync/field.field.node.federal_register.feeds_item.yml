@@ -1,0 +1,23 @@
+uuid: 497dc79c-d639-4af8-83ac-3e15259db44a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.feeds_item
+    - node.type.federal_register
+  module:
+    - feeds
+id: node.federal_register.feeds_item
+field_name: feeds_item
+entity_type: node
+bundle: federal_register
+label: 'Feeds item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:feeds_feed'
+  handler_settings: {  }
+field_type: feeds_item

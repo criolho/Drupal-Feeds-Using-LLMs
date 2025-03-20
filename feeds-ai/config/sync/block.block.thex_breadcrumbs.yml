@@ -1,0 +1,22 @@
+uuid: 1ad22586-4f78-4457-b1c5-02d81cc33706
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - thex
+_core:
+  default_config_hash: KGT10tOzp3qOnoOri6j-G6VagDmG8NWATZoF4wm181Y
+id: thex_breadcrumbs
+theme: thex
+region: page_header
+weight: -7
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

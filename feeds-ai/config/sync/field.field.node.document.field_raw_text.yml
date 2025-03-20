@@ -1,0 +1,19 @@
+uuid: 651fd91c-ae1c-4f3b-8e00-f5fa2c76521f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_raw_text
+    - node.type.document
+id: node.document.field_raw_text
+field_name: field_raw_text
+entity_type: node
+bundle: document
+label: 'Raw Text'
+description: 'Raw text of doc'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,24 @@
+uuid: e809450d-b528-47dd-9441-9a38e8ca52e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_activist_summary
+    - filter.format.full_html
+    - node.type.federal_register
+  module:
+    - text
+id: node.federal_register.field_activist_summary
+field_name: field_activist_summary
+entity_type: node
+bundle: federal_register
+label: 'Activist Summary'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

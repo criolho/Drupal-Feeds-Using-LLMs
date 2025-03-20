@@ -1,0 +1,29 @@
+uuid: c9ff288e-3c73-4fc7-bbab-487afc775841
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ai_tags
+    - node.type.document
+    - taxonomy.vocabulary.ai_tags
+id: node.document.field_ai_tags
+field_name: field_ai_tags
+entity_type: node
+bundle: document
+label: 'AI Tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      ai_tags: ai_tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

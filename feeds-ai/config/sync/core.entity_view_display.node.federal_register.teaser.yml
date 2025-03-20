@@ -1,0 +1,56 @@
+uuid: 23916bfb-1141-4e9e-b798-5729094758d6
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.federal_register.body
+    - field.field.node.federal_register.feeds_item
+    - field.field.node.federal_register.field_activist_summary
+    - field.field.node.federal_register.field_agency
+    - field.field.node.federal_register.field_ai_tags
+    - field.field.node.federal_register.field_citation
+    - field.field.node.federal_register.field_document_number
+    - field.field.node.federal_register.field_effective_on
+    - field.field.node.federal_register.field_federal_register_type
+    - field.field.node.federal_register.field_high_school_summary
+    - field.field.node.federal_register.field_llm
+    - field.field.node.federal_register.field_lobbyist_summary
+    - field.field.node.federal_register.field_pdf_url
+    - field.field.node.federal_register.field_raw_text
+    - node.type.federal_register
+  module:
+    - text
+    - user
+id: node.federal_register.teaser
+targetEntityType: node
+bundle: federal_register
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  feeds_item: true
+  field_activist_summary: true
+  field_agency: true
+  field_ai_tags: true
+  field_citation: true
+  field_document_number: true
+  field_effective_on: true
+  field_federal_register_type: true
+  field_high_school_summary: true
+  field_llm: true
+  field_lobbyist_summary: true
+  field_pdf_url: true
+  field_raw_text: true

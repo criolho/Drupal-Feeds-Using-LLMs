@@ -1,0 +1,29 @@
+uuid: 2b6f7fd5-e70f-4c3f-96b1-82d1d861a16b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_llm
+    - node.type.document
+    - taxonomy.vocabulary.llm
+id: node.document.field_llm
+field_name: field_llm
+entity_type: node
+bundle: document
+label: LLM
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      llm: llm
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

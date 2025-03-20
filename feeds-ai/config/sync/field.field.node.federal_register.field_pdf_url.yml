@@ -1,0 +1,23 @@
+uuid: fd125c6c-223c-4c9c-bbf4-9fe6d9508f2b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pdf_url
+    - node.type.federal_register
+  module:
+    - link
+id: node.federal_register.field_pdf_url
+field_name: field_pdf_url
+entity_type: node
+bundle: federal_register
+label: 'Source URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 16
+field_type: link

@@ -1,0 +1,104 @@
+uuid: 71d7b4fb-f4cb-44bf-93a8-d6e9893032f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.article.body
+    - field.field.node.article.field_ai_tags
+    - node.type.article
+  module:
+    - feeds_ex
+    - node
+label: 'News Article'
+id: news_article
+description: ''
+help: ''
+import_period: -1
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: jsonpath
+parser_configuration:
+  context:
+    value: $.documents
+  source_encoding:
+    - auto
+  display_errors: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: article
+  langcode: en
+  insert_new: 1
+  update_existing: 0
+  update_non_existent: _keep
+  skip_hash_check: false
+  skip_validation: false
+  skip_validation_types: {  }
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  title:
+    value: title
+    label: title
+    machine_name: title
+    type: json
+  body:
+    value: body
+    label: body
+    machine_name: body
+    type: json
+  ai_generated_text:
+    value: 'AI-Generated Text'
+    label: 'AI-Generated Text'
+    machine_name: ai_generated_text
+    type: blank
+  '':
+    value: summary
+    label: summary
+    machine_name: ''
+    type: json
+  summary:
+    value: summary
+    label: summary
+    machine_name: summary
+    type: json
+  ai_tags:
+    value: ai_tags
+    label: ai_tags
+    machine_name: ai_tags
+    type: json
+mappings:
+  -
+    target: title
+    map:
+      value: title
+    settings:
+      language: null
+    unique:
+      value: 1
+  -
+    target: field_ai_tags
+    map:
+      target_id: ai_tags
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: ai_tags
+  -
+    target: body
+    map:
+      value: summary
+      summary: ''
+    settings:
+      language: ''
+      format: full_html

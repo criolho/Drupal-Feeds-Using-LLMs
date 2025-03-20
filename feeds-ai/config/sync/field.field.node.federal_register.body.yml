@@ -1,0 +1,24 @@
+uuid: 53a0bc72-dd5e-46b6-815b-095a0f39c563
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.federal_register
+  module:
+    - text
+id: node.federal_register.body
+field_name: body
+entity_type: node
+bundle: federal_register
+label: 'Short Summary'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

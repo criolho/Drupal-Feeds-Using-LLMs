@@ -1,0 +1,9 @@
+uuid: 357bb551-db9c-4f7a-b7b0-d16dfdab42b8
+langcode: en
+status: true
+dependencies: {  }
+name: 'Environmental Issues'
+vid: environmental_issues
+description: 'Topics related to the environment'
+weight: -10
+new_revision: false

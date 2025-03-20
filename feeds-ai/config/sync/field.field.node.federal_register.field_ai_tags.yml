@@ -1,0 +1,29 @@
+uuid: 9d6ac169-3486-4e50-88d8-3068f43ac882
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ai_tags
+    - node.type.federal_register
+    - taxonomy.vocabulary.ai_tags
+id: node.federal_register.field_ai_tags
+field_name: field_ai_tags
+entity_type: node
+bundle: federal_register
+label: 'AI Tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      ai_tags: ai_tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,27 @@
+uuid: 44ab4ee3-c9b1-4cc1-bccf-3baf3f648fe0
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - thex
+_core:
+  default_config_hash: dYLD1-tgUH1F9S0WZV_5VOaeXwMmFvwOwsqjMEP1Lh4
+id: thex_footer
+theme: thex
+region: footer_four
+weight: -11
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Footer menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

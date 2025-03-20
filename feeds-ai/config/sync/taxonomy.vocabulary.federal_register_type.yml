@@ -1,0 +1,9 @@
+uuid: 7368b2d2-46e7-4c70-a016-881bfc82c277
+langcode: en
+status: true
+dependencies: {  }
+name: 'Federal Register Type'
+vid: federal_register_type
+description: 'Rule, Proposed Rule or Notice'
+weight: -6
+new_revision: false

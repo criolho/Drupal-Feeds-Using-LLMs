@@ -1,0 +1,21 @@
+uuid: a6c9105f-83a9-45d1-9e01-a8c7593f0b76
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_laws
+field_name: field_laws
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
