@@ -100,7 +100,7 @@ class LLMFactory:
             if max_tokens is not None:
                 completion_params["max_tokens"] = max_tokens
     
-	          # For Gemini, try our custom solution for fixing problematic
+	        # For Gemini, try our custom solution for fixing problematic
           	# characters in HTML content stored as a JSON value
         if self.provider == "gemini":
             try:
@@ -119,7 +119,7 @@ class LLMFactory:
                     if end_marker > start_marker:
                         raw_text = raw_text[start_marker:end_marker].strip()
                 
-                # Now let's fix the HTML content in the summary
+                # Now let's fix the HTML content in the summary if it has messed up quoting from a misbehaving LLM
                 if '"summary":' in raw_text:
                     summary_start = raw_text.find('"summary":')
                     summary_value_start = raw_text.find('"', raw_text.find(':', summary_start) + 1) + 1
